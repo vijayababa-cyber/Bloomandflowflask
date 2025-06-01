@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Blog Post - Bloom and Flow Admin</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">
+                <i class="fas fa-lotus-flower me-2"></i>
+                Bloom and Flow
+            </a>
+            
+            <div class="ms-auto">
+                <a href="{{ url_for('index') }}" class="btn btn-outline-primary">Back to Site</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Main Content -->
+    <div class="blog-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-5 fw-bold">Create New Blog Post</h1>
+                    <p class="lead">Share valuable insights about menstrual health and wellness</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="admin-form">
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="title" class="form-label">Title *</label>
+                            <input type="text" class="form-control" id="title" name="title" required 
+                                   placeholder="Enter blog post title">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="summary" class="form-label">Summary</label>
+                            <textarea class="form-control" id="summary" name="summary" rows="3"
+                                      placeholder="Brief summary of the blog post (optional)"></textarea>
+                            <div class="form-text">This will be shown on the blog listing page</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="content" class="form-label">Content *</label>
+                            <textarea class="form-control" id="content" name="content" rows="12" required
+                                      placeholder="Write your blog post content here..."></textarea>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="category" class="form-label">Category</label>
+                                    <select class="form-control" id="category" name="category">
+                                        <option value="General">General</option>
+                                        <option value="Health Tips">Health Tips</option>
+                                        <option value="Nutrition">Nutrition</option>
+                                        <option value="Exercise">Exercise</option>
+                                        <option value="Mental Health">Mental Health</option>
+                                        <option value="Research">Research</option>
+                                        <option value="Product Reviews">Product Reviews</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="tags" class="form-label">Tags</label>
+                                    <input type="text" class="form-control" id="tags" name="tags"
+                                           placeholder="menstrual health, period care, wellness">
+                                    <div class="form-text">Separate tags with commas</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="image_url" class="form-label">Featured Image URL</label>
+                            <input type="url" class="form-control" id="image_url" name="image_url"
+                                   placeholder="https://example.com/image.jpg">
+                            <div class="form-text">Optional: Add a featured image for your blog post</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="featured" name="featured" value="1">
+                                    <label for="featured">Featured Post</label>
+                                </div>
+                                <div class="form-text">Featured posts appear on the homepage</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkbox-wrapper">
+                                    <input type="checkbox" id="published" name="published" value="1" checked>
+                                    <label for="published">Publish Immediately</label>
+                                </div>
+                                <div class="form-text">Uncheck to save as draft</div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-2 mt-4">
+                            <button type="submit" class="btn btn-primary">Create Post</button>
+                            <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

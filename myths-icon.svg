@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="mythGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5B2D6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E687C2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="factGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#CC4D80;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E687C2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="lightGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#F5B2D6;stop-opacity:0.5" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="90" fill="url(#mythGradient)" opacity="0.2"/>
+  
+  <!-- Light bulb representing knowledge/facts -->
+  <circle cx="100" cy="85" r="35" fill="url(#lightGradient)" opacity="0.8"/>
+  <rect x="85" y="115" width="30" height="25" rx="5" fill="url(#factGradient)"/>
+  <rect x="88" y="140" width="24" height="8" rx="4" fill="url(#factGradient)" opacity="0.7"/>
+  <rect x="90" y="148" width="20" height="6" rx="3" fill="url(#factGradient)" opacity="0.5"/>
+  
+  <!-- Filament inside bulb -->
+  <path d="M90 75 Q100 65 110 75 Q100 85 90 75" stroke="url(#factGradient)" stroke-width="2" fill="none"/>
+  <path d="M90 85 Q100 95 110 85" stroke="url(#factGradient)" stroke-width="2" fill="none"/>
+  
+  <!-- Question marks for myths -->
+  <text x="50" y="70" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="url(#factGradient)" opacity="0.6">?</text>
+  <text x="145" y="60" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="url(#factGradient)" opacity="0.5">?</text>
+  <text x="160" y="120" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="url(#factGradient)" opacity="0.4">?</text>
+  <text x="35" y="130" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="url(#factGradient)" opacity="0.5">?</text>
+  
+  <!-- Light rays emanating from bulb -->
+  <path d="M100 40 L100 25" stroke="url(#factGradient)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M130 55 L140 45" stroke="url(#factGradient)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M145 85 L160 85" stroke="url(#factGradient)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M130 115 L140 125" stroke="url(#factGradient)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M70 115 L60 125" stroke="url(#factGradient)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M55 85 L40 85" stroke="url(#factGradient)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M70 55 L60 45" stroke="url(#factGradient)" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Educational symbols -->
+  <circle cx="140" y="160" r="8" fill="url(#factGradient)" opacity="0.6"/>
+  <rect x="135" y="155" width="10" height="10" fill="#FFFFFF"/>
+  <path d="M138 158 L140 160 L145 155" stroke="url(#factGradient)" stroke-width="2" fill="none"/>
+  
+  <!-- Book/knowledge symbol -->
+  <rect x="55" y="150" width="20" height="15" rx="2" fill="url(#factGradient)" opacity="0.7"/>
+  <rect x="55" y="150" width="20" height="3" fill="url(#factGradient)"/>
+  <line x1="60" y1="155" x2="70" y2="155" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="60" y1="158" x2="68" y2="158" stroke="#FFFFFF" stroke-width="1"/>
+  <line x1="60" y1="161" x2="65" y2="161" stroke="#FFFFFF" stroke-width="1"/>
+</svg>
